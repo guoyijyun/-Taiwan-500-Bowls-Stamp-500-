@@ -66,3 +66,48 @@ graph TD
     style Phase_2 fill:#bbf,stroke:#333,stroke-width:2px
     style Phase_3 fill:#fbf,stroke:#333,stroke-width:2px
     style Phase_4 fill:#bfb,stroke:#333,stroke-width:2px
+
+
+## 🗃️ 資料庫欄位設計 (Database Schema)
+1. stores (店家靜態資料)
+{
+  "store_id": "store_001",
+  "name": "彰化阿三肉圓",
+  "year": [2023, 2024],
+  "category": "肉圓/小吃",
+  "address": "彰化市三民路242號",
+  "lat": 24.0816,
+  "lng": 120.5432
+}
+
+2. check_ins (使用者集章與評論資料)
+{
+  "check_in_id": "chk_12345",
+  "uid": "user_firebase_uid",
+  "store_id": "store_001",
+  "visited_at": "2026-05-29T21:15:00Z",
+  "stamp_image_url": "https://firebasestorage.../stamps/meatball.png",
+  "rating": 5,
+  "comment": "外皮超酥脆，干貝內餡很厲害，配特製醬料完美！"
+}
+
+## 🏃‍♂️ 如何在本地端啟動專案 (Getting Started)
+1. 複製專案
+git clone [https://github.com/your-username/taiwan-500-bowls-stamp.git](https://github.com/your-username/taiwan-500-bowls-stamp.git)
+   cd taiwan-500-bowls-stamp
+
+2.安裝依賴套件
+npm install
+
+3.設定環境變數
+在根目錄建立 .env.local 並填入你的 Firebase 配置：
+
+VITE_FIREBASE_API_KEY=your_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_project_id
+   VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+   VITE_FIREBASE_APP_ID=your_app_id
+
+4.啟動開發伺服器
+npm run dev
